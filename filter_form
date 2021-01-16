@@ -1,0 +1,14 @@
+# Function to check if molecular formula only contains the given elements  
+# retruns True:    No other elements are present 
+# returns False:   Other elements are present 
+
+def filter_form(string):
+  # elements: the molecule only may contain only these elements
+  elements = [  
+              '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', # all digits
+              'Cl', 'Br', 'C', 'H', 'O'   # First the double string elements such as Cl, Br, Si 
+              ]
+  form = string
+  for i in elements:
+    form = form.replace(i,'')   # remove the numbers and the allowed elements 
+  return form == ''
